@@ -1,0 +1,46 @@
+#custom topology file of the system
+topol.mtop
+#trajectory file containing coordinates and velocities (all molecules must be "whole")
+traj_pbc.trr
+#input file defining solute, solvent and non-solvent groups
+groups.job
+#number of frames in trajectory
+12500
+#analyze every n'th frame
+5
+#reference file with solute coordinates (center of mass at 0,0,0)
+align_ref.gro
+#group index (starting at 0) for solute group used for translational and optional rotational fitting
+0
+#group index (starting at 0) of solute group
+0
+#group index (starting at 0) of solvent group (should be just water here)
+1
+#group index (starting at 0) of non-solute group (i.e. water plus co-solvents/co-solutes in some cases, here just water)
+#(used to compute the interaction energies of water/solvent molecules in solvent group with the rest of the system,
+#apart from the solute for which the interaction energies are treated separately)
+1
+#are we doing rotational aligning (does not work for monoatomic solutes, so 'no=0' in that case)
+0
+#mode for PBC wrapping during analysis (must be 2, otherwise there will most likely be an error)
+2
+#number of grid points in x-dimension
+90
+#number of grid points in y-dimension
+90
+#number of grid points in z-dimension
+90
+#grid constant in Angstrom
+1.0
+#cut-off distance (Angstrom) for potential evaluation between molecules (this is the smallest distance of any two atoms of two molecules)
+12.0
+#cutoff distance (Angstrom) for neighbour list (should be the same as above for now)
+12.0
+#do we compute Lennard-Jones interactions (0=no,1=yes)
+1
+#do we compute electrostatic interactions (0=no,1=yes)
+1
+#take periodic boundary conditions into account (should be yes=1)
+1
+#string to prepend to output file
+grid-90x90x90

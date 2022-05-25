@@ -1,0 +1,29 @@
+#This is a job file:
+#it defines groups of atoms used in the analysis
+#in this case one group should define the solute
+#another group should define the solvent
+[static_groups]         2
+#static group 0
+name                    Protein
+chain(s)                A
+residue(s)              * 
+atom(s)                 *
+residue_number(s)       *
+residue_range           *
+atom_number(s)          *
+atom_range              *
+#static group 1
+name                    Water
+chain(s)                B
+residue(s)              SOL 
+atom(s)                 *
+residue_number(s)       *
+residue_range           *
+atom_number(s)          *
+atom_range              *
+#feature to select groups of atoms/molecules by distance criteria
+#not used/necessary here
+[dynamic_groups]        0
+#feature to combine previously defined groups
+#not used/necessary here
+[combination_groups]     0

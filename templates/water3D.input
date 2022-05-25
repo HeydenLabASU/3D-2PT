@@ -1,0 +1,32 @@
+#custom toplogy file
+topol.mtop
+#trajectory file containing coordinates and velocities (all molecules must be "whole")
+traj_pbc.trr
+#input file defining solute and solvent(water only) groups
+groups.job
+#number of frames in trajectory
+12500
+#analyze every n'th frame
+1
+#reference file with solute coordinates (center of mass at 0,0,0)
+align_ref.gro
+#group index (starting at 0) for solute group used for translational and optional rotational fitting
+0
+#group index (starting at 0) of water group for analysis (only water supported)
+1
+#mode for PBC wrapping during analysis (0=none, 1=atom0_of_each_molecule, 2=mol_COM)
+2
+#length in frames of velocity auto correlation function
+200
+#number of grid points in x-dimension
+90
+#number of grid points in y-dimension
+90
+#number of grid points in z-dimension
+90
+#grid constant in Angstrom
+1.0
+#unused parameter
+1.0
+#string to prepend to output file
+grid-90x90x90
