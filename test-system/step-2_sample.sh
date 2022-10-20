@@ -38,6 +38,7 @@ start=run-NPT+posres_${i}/confout.gro
 ((i+= 1))
 done
 
+echo "starting NPT simulation in run-NPT+posres_${i}"
 #We run the simulation with the usual combination of 
 #'grompp' and 'mdrun' steps in a dedicated directory
 #created here.
@@ -57,6 +58,7 @@ gmx mdrun -v -nt 4 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro
 #format in a designated directory created here. The files 
 #will be numbered and called 
 #state_0.gro, state_1.gro, state_2.gro etc.
+echo "collecting snapshots"
 mkdir snapshots
 gmx trjconv -s topol.tpr -f traj.trr -pbc mol -sep -dt 100.0 -ndec 8 -o snapshots/state_.gro << STOP >& trjconv.out
 0
