@@ -1,6 +1,7 @@
 #!/bin/bash
 
 instdir=$1
+scriptdir=$2
 
 scripts=( 
 step-1_prepare 
@@ -13,14 +14,14 @@ step-6_process
 
 for sc in ${scripts[@]}
 do
-awk -v instdir=${instdir} '/^BIN/ {printf("BIN=%s/bin\n",instdir);}; ! /^BIN/ {printf("%s\n",$0);};' ${sc}.sh > ${sc}-update.sh
-mv ${sc}-update.sh ${sc}.sh
+awk -v instdir=${instdir} '/^BIN/ {printf("BIN=%s/bin\n",instdir);}; ! /^BIN/ {printf("%s\n",$0);};' ${scriptdir}/${sc}.sh > ${scriptdir}/${sc}-update.sh
+mv ${scriptdir}/${sc}-update.sh ${scriptdir}/${sc}.sh
 done
 
-if [ ! -x 3D-2PT-files/step-3x_3D-2PT.sh ]; then
-chmod +x 3D-2PT-files/step-3x_3D-2PT.sh
+if [ ! -x ${scriptdir}/3D-2PT-files/step-3x_3D-2PT.sh ]; then
+chmod +x ${scriptdir}/3D-2PT-files/step-3x_3D-2PT.sh
 fi
 
-if [ ! -x 3D-2PT/getS.sh ]; then
-chmod +x 3D-2PT/getS.sh
+if [ ! -x ${scriptdir}/3D-2PT/getS.sh ]; then
+chmod +x ${scriptdir}/3D-2PT/getS.sh
 fi
