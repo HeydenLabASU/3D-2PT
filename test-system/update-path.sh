@@ -9,7 +9,7 @@ step-4_average-level-1
 step-5_average-level-2 
 step-6_process 
 3D-2PT-files/step-3x_3D-2PT 
-3D-2PT/getS 
+3D-2PT-files/getS 
 )
 
 for sc in ${scripts[@]}
@@ -22,6 +22,6 @@ if [ ! -x ${scriptdir}/3D-2PT-files/step-3x_3D-2PT.sh ]; then
 chmod +x ${scriptdir}/3D-2PT-files/step-3x_3D-2PT.sh
 fi
 
-if [ ! -x ${scriptdir}/3D-2PT/getS.sh ]; then
-chmod +x ${scriptdir}/3D-2PT/getS.sh
+if [ ! -x ${scriptdir}/3D-2PT-files/getS.sh ]; then
+chmod +x ${scriptdir}/3D-2PT-files/getS.sh
 fi
