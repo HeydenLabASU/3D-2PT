@@ -56,14 +56,14 @@ gmx editconf -f complex.pdb -box 3 3 3 -o box.gro >& editconf.out
 echo "solvating system (gmx solvate)"
 gmx solvate -cp box.gro -cs -p complex.top -o solv.gro >& solvate.out
 
-echo "running energy minimization"
+echo "running energy minimizationin directory: em+posres"
 mkdir em+posres
 cd em+posres
 gmx grompp -f ../em+posres.mdp -c ../solv.gro -r ../solv.gro -p ../complex.top -o topol.tpr -maxwarn 1 >& grompp.out
 gmx mdrun -v -nt 1 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 cd ..
 
-echo "running NPT equilibration"
+echo "running NPT equilibration in directory: equi-NPT+posres"
 mkdir equi-NPT+posres
 cd equi-NPT+posres
 gmx grompp -f ../equi-NPT+posres.mdp -c ../em+posres/confout.gro -p ../complex.top -r ../solv.gro -o topol.tpr -maxwarn 1 >& grompp.out
