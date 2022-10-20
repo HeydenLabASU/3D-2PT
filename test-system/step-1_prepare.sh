@@ -1,6 +1,28 @@
 #!/bin/bash
 
-BIN=<your-3D-2PT-installation-directory>/bin
+BIN=bin
+
+if [ ! -f ${BIN}/water3D_noRot.exe ]; then
+echo "provide installation directory for 3D-2PT:"
+read instdir
+BIN=${instdir}/bin
+if [ ! -x update-path.sh ]; then
+chmod update-path.sh
+fi
+./update-path.sh ${instdir}
+fi
+
+while [ ! -f ${BIN}/water3D_noRot.exe ]
+do
+echo "did not find 3D-2PT executables in directory: ${BIN}"
+echo "provide correct path:"
+read instdir
+BIN=${instdir}/bin
+if [ ! -x update-path.sh ]; then
+chmod update-path.sh
+fi
+./update-path.sh ${instdir}
+done
 
 #first, let's check that all files are in the right place
 files=(
