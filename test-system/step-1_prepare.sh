@@ -7,7 +7,7 @@ STOP`
 BIN=bin
 
 if [ ! -f ${BIN}/water3D_noRot.exe ]; then
-echo "provide installation directory for 3D-2PT:"
+echo "specifiy installation directory for 3D-2PT (only needed once):"
 read instdir
 BIN=${instdir}/bin
 if [ ! -x ${scriptdir}/update-path.sh ]; then
