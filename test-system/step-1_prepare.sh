@@ -10,8 +10,8 @@ if [ ! -f ${BIN}/water3D_noRot.exe ]; then
 echo "provide installation directory for 3D-2PT:"
 read instdir
 BIN=${instdir}/bin
-if [ ! -x update-path.sh ]; then
-chmod +x update-path.sh
+if [ ! -x ${scriptdir}/update-path.sh ]; then
+chmod +x ${scriptdir}/update-path.sh
 fi
 ${scriptdir}/update-path.sh ${instdir} ${scriptdir}
 fi
@@ -22,8 +22,8 @@ echo "did not find 3D-2PT executables in directory: ${BIN}"
 echo "provide correct path:"
 read instdir
 BIN=${instdir}/bin
-if [ ! -x update-path.sh ]; then
-chmod +x update-path.sh
+if [ ! -x ${scriptdir}/update-path.sh ]; then
+chmod +x ${scriptdir}/update-path.sh
 fi
 ${scriptdir}/update-path.sh ${instdir} ${scriptdir}
 done
