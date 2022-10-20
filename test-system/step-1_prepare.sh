@@ -11,7 +11,7 @@ echo "provide installation directory for 3D-2PT:"
 read instdir
 BIN=${instdir}/bin
 if [ ! -x update-path.sh ]; then
-chmod update-path.sh
+chmod +x update-path.sh
 fi
 ${scriptdir}/update-path.sh ${instdir}
 fi
@@ -23,7 +23,7 @@ echo "provide correct path:"
 read instdir
 BIN=${instdir}/bin
 if [ ! -x update-path.sh ]; then
-chmod update-path.sh
+chmod +x update-path.sh
 fi
 ${scriptdir}/update-path.sh ${instdir}
 done
