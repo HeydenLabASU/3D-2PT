@@ -5,7 +5,7 @@ echo "provide prefix for 3D-2PT files, e.g. grid-96x96x96"
 exit
 fi
 
-BIN=/scratch/mheyden1/ResearchOnline/example/3D-2PT/bin
+BIN=<your-3D-2PT-installation-directory>/bin
 
 prefix=$1
 
