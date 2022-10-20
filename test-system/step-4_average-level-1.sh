@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BIN=../../../bin
+
 if [ ! -d snapshots ]; then
 echo "-submit this script from within a run-NPT+posres_x directory"
 echo "-exiting"
@@ -92,7 +94,7 @@ echo "${prefix}_${avCubes[cubeIdx]}.cube"
 fi
 ((i+= 1))
 done >& avercube.input
-/scratch/mheyden1/cubetool/src/averCubefiles.exe < avercube.input >& avercube.out
+${BIN}/averCubefiles.exe < avercube.input >& avercube.out
 ((cubeIdx+= 1))
 done
 
@@ -112,7 +114,7 @@ echo "${prefix}_${w1avCubes[cubeIdx]}.cube"
 fi
 ((i+= 1))
 done >& avercube.input
-/scratch/mheyden1/cubetool/src/weightedAverCubeFiles.exe < avercube.input >& avercube.out
+${BIN}/weightedAverCubeFiles.exe < avercube.input >& avercube.out
 ((cubeIdx+= 1))
 done
 
@@ -132,7 +134,7 @@ echo "${prefix}_${w2avCubes[cubeIdx]}.cube"
 fi
 ((i+= 1))
 done >& avercube.input
-/scratch/mheyden1/cubetool/src/weightedAverCubeFiles.exe < avercube.input >& avercube.out
+${BIN}/weightedAverCubeFiles.exe < avercube.input >& avercube.out
 ((cubeIdx+= 1))
 done
 
@@ -170,7 +172,7 @@ echo "${prefix}_${data[dataIdx]}.dat"
 fi
 ((i+= 1))
 done >& average.input
-/scratch/mheyden1/MadR2014/grid-dynamics/average.exe average.input >& average.out
+${BIN}/average.exe average.input >& average.out
 ((dataIdx+= 1))
 done
 
