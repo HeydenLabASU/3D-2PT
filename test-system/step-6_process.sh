@@ -1,11 +1,6 @@
 #!/bin/bash
 
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH -t 0:02:00                  # wall time (D-HH:MM)
-
-module load gromacs/2018.1
-module load vmd/1.9.3
+BIN=../../bin
 
 if [ ! -d average ]; then
 echo "-could not find directory average"
@@ -85,7 +80,7 @@ ${prefix}_water3D-totalS.cube
 300
 0.2
 STOP
-/scratch/mheyden1/MadR2014/grid-dynamics/process-cube.exe < process.input >& process.out
+${BIN}/process-cube.exe < process.input >& process.out
 echo "-done"
 
 cd ..
