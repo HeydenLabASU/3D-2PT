@@ -13,7 +13,7 @@ BIN=${instdir}/bin
 if [ ! -x update-path.sh ]; then
 chmod +x update-path.sh
 fi
-${scriptdir}/update-path.sh ${instdir}
+${scriptdir}/update-path.sh ${instdir} ${scriptdir}
 fi
 
 while [ ! -f ${BIN}/water3D_noRot.exe ]
@@ -25,7 +25,7 @@ BIN=${instdir}/bin
 if [ ! -x update-path.sh ]; then
 chmod +x update-path.sh
 fi
-${scriptdir}/update-path.sh ${instdir}
+${scriptdir}/update-path.sh ${instdir} ${scriptdir}
 done
 
 #first, let's check that all files are in the right place
