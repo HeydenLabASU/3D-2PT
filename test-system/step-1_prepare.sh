@@ -1,16 +1,6 @@
 #!/bin/bash
 
-#This section is needed to tell the agave computer cluster 
-#what resources are needed for this job.
-#Here, we request one compute node with 16 CPU cores for 
-#the duration of 1 hour.
-#SBATCH -N 1
-#SBATCH -n 16
-#SBATCH -t 0-01:00                  # wall time (D-HH:MM)
-#SBATCH -o step-1.out
-
-module load gromacs/2018.1
-BIN=/scratch/mheyden1/ResearchOnline/example/3D-2PT/bin
+BIN=../../bin
 
 #first, let's check that all files are in the right place
 files=(
@@ -58,7 +48,7 @@ complex_Protein_chain_B.itp
 /scratch/mheyden1/ResearchOnline/amber99sb-ildn.ff/ffnonbonded.itp
 complex.mtop
 STOP
-module load vmd/1.9.3
+
 cat << STOP >& tmp.tcl
 mol new box.gro
 set sel1 [atomselect top "not water and not hydrogen"]
