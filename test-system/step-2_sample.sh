@@ -38,7 +38,7 @@ start=run-NPT+posres_${i}/confout.gro
 ((i+= 1))
 done
 
-echo "starting NPT simulation in run-NPT+posres_${i}"
+echo "starting NPT simulation in directory: run-NPT+posres_${i}"
 #We run the simulation with the usual combination of 
 #'grompp' and 'mdrun' steps in a dedicated directory
 #created here.
