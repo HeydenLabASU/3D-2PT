@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH -t 0-04:00                  # wall time (D-HH:MM)
-#SBATCH -o step-4.out
-
 if [ ! -d snapshots ]; then
 echo "-submit this script from within a run-NPT+posres_x directory"
 echo "-exiting"
