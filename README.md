@@ -3,8 +3,8 @@ Installation instructions
 requirements: installed single precision FFTW3 library (www.fftw.org)
 
 To compile the 3D-2PT executables, download the files in this repository and type:
-$ mkdir bin
-$ make
+$ mkdir bin\n
+$ make\n
 
 To get started with 3D-2PT calculations, enter the "test-system" directory
 $ cd test-system
