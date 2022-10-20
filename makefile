@@ -17,6 +17,8 @@ lib/mol.o
 
 $(shell   mkdir -p bin)
 $(shell   mkdir -p lib)
+$(shell   chmod +x test-system/*.sh)
+$(shell   chmod +x test-system/3D-2PT-files/*.sh)
 
 all: gmxtop gmxtop-2 psf psf2 psf3 topsf dens3D water3D water3D_noRot water3D_noRot_cryst pot3D pot3D_cryst pot3D_voxAlign pot3D-wsScale pot3D-scH pot3D-OPLS pot3D-OPLS_cryst trans-vdos2entropy rot-vdos2entropy add_cubes averCubefiles weightedAverCubeFiles average process-cube
 
