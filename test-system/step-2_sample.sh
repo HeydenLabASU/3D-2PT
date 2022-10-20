@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#SBATCH -N 1
-#SBATCH -n 4
-#SBATCH -t 0-24:00                  # wall time (D-HH:MM)
-#SBATCH -o step-2.out
-
-module load gromacs/2018.1
-
 #first, let's check that all files are in the right place
 files=(
 posre_Protein_chain_A.itp
