@@ -1,11 +1,6 @@
 #!/bin/bash
 
-#SBATCH -N 1
-#SBATCH -n 4
-#SBATCH -t 0-24:00                  # wall time (D-HH:MM)
-
-module load gromacs/2018.1
-BIN=/scratch/mheyden1/ResearchOnline/example/3D-2PT/bin
+BIN=../../../../bin
 
 #first, let's check that all files are in the right place
 files=(
@@ -41,9 +36,10 @@ gmx trjconv -s topol.tpr -f traj.trr -pbc mol -o traj_pbc.trr << STOP >& trjconv
 STOP
 rm traj.trr
 
+#openMP parallelization available, but test for each system recommended
+#parallelization works best for pot3D
 export OMP_NUM_THREADS=1
 ${BIN}/water3D_noRot.exe ../../../3D-2PT-files/water3D.input >& water3D.out
-export OMP_NUM_THREADS=4
 ${BIN}/pot3D.exe ../../../3D-2PT-files/pot3D.input >& pot3D.out
 
 rm traj_pbc.trr
