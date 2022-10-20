@@ -1,9 +1,6 @@
 #!/bin/bash
 
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH -t 0-04:00                  # wall time (D-HH:MM)
-#SBATCH -o step-5.out
+BIN=../../bin
 
 #first, let's check that all files are in the right place
 files=(
@@ -91,7 +88,7 @@ echo "${prefix}_${avCubes[cubeIdx]}.cube"
 fi
 ((i+= 1))
 done >& avercube.input
-/scratch/mheyden1/cubetool/src/averCubefiles.exe < avercube.input >& avercube.out
+${BIN}/averCubefiles.exe < avercube.input >& avercube.out
 ((cubeIdx+= 1))
 done
 
@@ -111,7 +108,7 @@ echo "${prefix}_${w1avCubes[cubeIdx]}.cube"
 fi
 ((i+= 1))
 done >& avercube.input
-/scratch/mheyden1/cubetool/src/weightedAverCubeFiles.exe < avercube.input >& avercube.out
+${BIN}/weightedAverCubeFiles.exe < avercube.input >& avercube.out
 ((cubeIdx+= 1))
 done
 
@@ -131,7 +128,7 @@ echo "${prefix}_${w2avCubes[cubeIdx]}.cube"
 fi
 ((i+= 1))
 done >& avercube.input
-/scratch/mheyden1/cubetool/src/weightedAverCubeFiles.exe < avercube.input >& avercube.out
+${BIN}/weightedAverCubeFiles.exe < avercube.input >& avercube.out
 ((cubeIdx+= 1))
 done
 
@@ -169,7 +166,7 @@ echo "${prefix}_${data[dataIdx]}.dat"
 fi
 ((i+= 1))
 done >& average.input
-/scratch/mheyden1/MadR2014/grid-dynamics/average.exe average.input >& average.out
+${BIN}/average.exe average.input >& average.out
 ((dataIdx+= 1))
 done
 
