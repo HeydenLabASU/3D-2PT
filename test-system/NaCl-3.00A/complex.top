@@ -1,0 +1,43 @@
+;
+;	File 'chloride.top' was generated
+;	By user: mheyden (501)
+;	On host: matthiass-mbp.3500.dhcp.asu.edu
+;	At date: Thu Mar  3 14:05:58 2022
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2018.8 (-:
+;	
+;	Executable:   /usr/local/gromacs-2018.8/bin/gmx
+;	Data prefix:  /usr/local/gromacs-2018.8
+;	Working dir:  /Users/mheyden/Dropbox (ASU)/ASU-research/ResearchOnline/3D-2PT-example
+;	Command line:
+;	  gmx pdb2gmx -f chloride.gro -o tmp.gro -p chloride.top
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "amber99sb-ildn.ff/forcefield.itp"
+
+#include "complex_Protein_chain_A.itp"
+#include "complex_Protein_chain_B.itp"
+
+; Include water topology
+#include "amber99sb-ildn.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+[ system ]
+; Name
+System
+
+[ molecules ]
+; Compound        #mols
+NA                  1
+CL                  1

@@ -1,0 +1,8 @@
+TITLE     Sodium Chloride Ion Pair
+REMARK    THIS IS A SIMULATION BOX
+CRYST1   30.000   30.000   30.000  90.00  90.00  90.00 P 1           1
+MODEL        1
+ATOM      1  NA   NA     1      -2.000   0.000   0.000  1.00  0.00            
+ATOM      2  CL   CL     2       2.000   0.000   0.000  1.00  0.00            
+TER
+ENDMDL

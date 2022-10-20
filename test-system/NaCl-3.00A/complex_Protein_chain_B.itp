@@ -1,0 +1,13 @@
+[ moleculetype ]
+; Name            nrexcl
+CL                  3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue   1 CL  rtp CL   q -1.0
+     1         Cl      1     CL     CL      1         -1      35.45   ; qtot -1
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Protein_chain_B.itp"
+#endif

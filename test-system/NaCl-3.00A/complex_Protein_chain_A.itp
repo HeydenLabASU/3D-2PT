@@ -1,0 +1,12 @@
+[ moleculetype ]
+; Name            nrexcl
+NA                  3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue   1 NA  rtp NA   q +1.0
+     1         Na      1     NA     NA      1          1      22.99   ; qtot 1
+
+#ifdef POSRES
+#include "posre_Protein_chain_A.itp"
+#endif
