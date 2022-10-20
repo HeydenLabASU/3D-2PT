@@ -41,6 +41,8 @@ fi
 iMax=`expr $i - 1`
 echo "-found ${iMax} snaphots (not counting state_0.gro, which will not be used)"
 
+echo "starting ${iMax} NVE simulations in directories: run-NVE+posres_1-${iMax}"
+echo "(you will want to parallelize this for real applications)"
 i=1
 while [ $i -le ${iMax} ]
 do
