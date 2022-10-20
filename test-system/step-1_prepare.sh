@@ -1,5 +1,9 @@
 #!/bin/bash
 
+scriptdir=`awk '{split($0,a,"/");printf("%s\n",a[1]);};' << STOP
+$0
+STOP`
+
 BIN=bin
 
 if [ ! -f ${BIN}/water3D_noRot.exe ]; then
@@ -9,7 +13,7 @@ BIN=${instdir}/bin
 if [ ! -x update-path.sh ]; then
 chmod update-path.sh
 fi
-./update-path.sh ${instdir}
+${scriptdir}/update-path.sh ${instdir}
 fi
 
 while [ ! -f ${BIN}/water3D_noRot.exe ]
@@ -21,7 +25,7 @@ BIN=${instdir}/bin
 if [ ! -x update-path.sh ]; then
 chmod update-path.sh
 fi
-./update-path.sh ${instdir}
+${scriptdir}/update-path.sh ${instdir}
 done
 
 #first, let's check that all files are in the right place
