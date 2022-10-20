@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BIN=../../../bin
+BIN=<your-3D-2PT-installation-directory>/bin
 
 if [ ! -d snapshots ]; then
 echo "-submit this script from within a run-NPT+posres_x directory"
