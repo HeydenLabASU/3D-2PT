@@ -14,17 +14,8 @@ The following software is required to run the test simulations:
 - gromacs (www.gromacs.org)
 - VMD (Visual Molecular Dynamics, http://www.ks.uiuc.edu/Research/vmd)
 
-The test system consist of a sodium and a chloride ion separated by 3.0A in water.
+The test system consists of a sodium and a chloride ion separated by 3.0A in water.
 Enter the corresponding sub-directory:
-adapt path to your installation directory set in variable BIN in the following scripts:
-- step-1_prepare.sh
-- step-4_average-level-1.sh
-- step-5_average-level-2.sh
-- step-6_process.sh 
-- 3D-2PT-files/step-3x_3D-2PT.sh
-- 3D-2PT/getS.sh
-
-Enter the sub-directory with prepared input:
 
 $ cd NaCl-3.00A
 
