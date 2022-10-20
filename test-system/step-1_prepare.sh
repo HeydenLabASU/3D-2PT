@@ -50,22 +50,27 @@ exit
 fi
 done
 
+echo "preparing simulation box (gmx editconf)"
 gmx editconf -f complex.pdb -box 3 3 3 -o box.gro >& editconf.out
 
+echo "solvating system (gmx solvate)"
 gmx solvate -cp box.gro -cs -p complex.top -o solv.gro >& solvate.out
 
+echo "running energy minimization"
 mkdir em+posres
 cd em+posres
 gmx grompp -f ../em+posres.mdp -c ../solv.gro -r ../solv.gro -p ../complex.top -o topol.tpr -maxwarn 1 >& grompp.out
 gmx mdrun -v -nt 1 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 cd ..
 
+echo "running NPT equilibration"
 mkdir equi-NPT+posres
 cd equi-NPT+posres
 gmx grompp -f ../equi-NPT+posres.mdp -c ../em+posres/confout.gro -p ../complex.top -r ../solv.gro -o topol.tpr -maxwarn 1 >& grompp.out
 gmx mdrun -v -nt 16 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 cd ..
 
+echo "creating 3D-2PT topology info"
 ${BIN}/gmxtop-2.exe << STOP >& convertGMXTOP.out
 complex.top
 complex_Protein_chain_A.itp
@@ -75,6 +80,7 @@ complex_Protein_chain_B.itp
 complex.mtop
 STOP
 
+echo "using VMD to generate reference structure (pdb)"
 cat << STOP >& tmp.tcl
 mol new box.gro
 set sel1 [atomselect top "not water and not hydrogen"]
