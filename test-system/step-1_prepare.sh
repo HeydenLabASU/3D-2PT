@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BIN=../../bin
+BIN=<your-3D-2PT-installation-directory>/bin
 
 #first, let's check that all files are in the right place
 files=(
