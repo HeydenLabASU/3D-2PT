@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH -t 0-00:10                  # wall time (D-HH:MM)
-#SBATCH -o step-3.out
-
 if [ ! -d snapshots ]; then
 echo "-submit this script from within a run-NPT+posres_x directory"
 echo "-exiting"
@@ -52,7 +47,7 @@ do
 mkdir run-NVE+posres_${i}
 cd run-NVE+posres_${i}
 cp ../snapshots/state_${i}.gro start.gro
-sbatch ../../../3D-2PT-files/step-3x_3D-2PT.sh 
+../../../3D-2PT-files/step-3x_3D-2PT.sh
 cd ..
 ((i+= 1))
 done
