@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BIN=../../bin
+BIN=<your-3D-2PT-installation-directory>/bin
 
 if [ ! -d average ]; then
 echo "-could not find directory average"
