@@ -3,8 +3,10 @@ Installation instructions
 requirements: installed single precision FFTW3 library (www.fftw.org)
 
 To compile the 3D-2PT executables, download the files in this repository and type:
-$ mkdir bin\n
-$ make\n
+
+$ mkdir bin
+
+$ make
 
 To get started with 3D-2PT calculations, enter the "test-system" directory
 $ cd test-system
@@ -23,5 +25,7 @@ adapt path to your installation directory set in variable BIN in the following s
 - 3D-2PT/getS.sh
 
 Enter the sub-directory with prepared input:
+
 $ cd NaCl-3.00A
+
 Execute the automated scripts in the sequence described in Flowchart.pdf
