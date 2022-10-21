@@ -2,14 +2,14 @@
 This program can be used to perform a spatially resolved analysis of solvation free energy, enthalpy and entropy calculations based on all-atom molecular dnamics simulations in explicit water.
 
 Applications include the research presented in the following peer-reviewed research articles:
-Persson, Pattni, Singh, Kast & Heyden, J. Chem. Theory Comput. 13, 4467-4481 (2017).
-Pattni, Vasilevskaya, Thiel & Heyden, J. Phys. Chem. B 121, 7431-7442 (2017).
-Heyden, WIREs Comp. Mol. Sci. e1390 (2018).
-Heyden, J. Chem. Phys. 150, 094701 (2019).
-Pattni & Heyden, J. Phys. Chem. B 123, 6014-6022 (2019).
-Conti Nibali, Pezzotti, Sebastiani, Galimberti, Schwaab, Heyden, Gaigeot & Havenith, J. Phys. Chem. Lett. 11, 4809-4816 (2020).
-Fajardo & Heyden, J. Phys. Chem. B. 125, 4634-4644 (2021).
-Waskasi, Lazaric, Heyden, Electrophoresis 42, 2060-2069 (2021).
+- Persson, Pattni, Singh, Kast & Heyden, J. Chem. Theory Comput. 13, 4467-4481 (2017).
+- Pattni, Vasilevskaya, Thiel & Heyden, J. Phys. Chem. B 121, 7431-7442 (2017).
+- Heyden, WIREs Comp. Mol. Sci. e1390 (2018).
+- Heyden, J. Chem. Phys. 150, 094701 (2019).
+- Pattni & Heyden, J. Phys. Chem. B 123, 6014-6022 (2019).
+- Conti Nibali, Pezzotti, Sebastiani, Galimberti, Schwaab, Heyden, Gaigeot & Havenith, J. Phys. Chem. Lett. 11, 4809-4816 (2020).
+- Fajardo & Heyden, J. Phys. Chem. B. 125, 4634-4644 (2021).
+- Waskasi, Lazaric, Heyden, Electrophoresis 42, 2060-2069 (2021).
 
 Installation instructions:
 Requirements: installed single precision FFTW3 library (www.fftw.org)
