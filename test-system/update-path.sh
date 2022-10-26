@@ -16,6 +16,7 @@ for sc in ${scripts[@]}
 do
 awk -v instdir=${instdir} '/^BIN/ {printf("BIN=%s/bin\n",instdir);}; ! /^BIN/ {printf("%s\n",$0);};' ${scriptdir}/${sc}.sh > ${scriptdir}/${sc}-update.sh
 mv ${scriptdir}/${sc}-update.sh ${scriptdir}/${sc}.sh
+chmod +x ${scriptdir}/${sc}.sh
 done
 
 if [ ! -x ${scriptdir}/3D-2PT-files/step-3x_3D-2PT.sh ]; then
