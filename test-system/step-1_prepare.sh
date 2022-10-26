@@ -75,8 +75,8 @@ ${BIN}/gmxtop-2.exe << STOP >& convertGMXTOP.out
 complex.top
 complex_Protein_chain_A.itp
 complex_Protein_chain_B.itp
-/scratch/mheyden1/ResearchOnline/amber99sb-ildn.ff/tip3p.itp
-/scratch/mheyden1/ResearchOnline/amber99sb-ildn.ff/ffnonbonded.itp
+amber99sb-ildn.ff/tip3p.itp
+amber99sb-ildn.ff/ffnonbonded.itp
 complex.mtop
 STOP
 
