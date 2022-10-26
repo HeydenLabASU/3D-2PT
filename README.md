@@ -12,14 +12,19 @@ Applications include the research presented in the following peer-reviewed resea
 - Waskasi, Lazaric, Heyden, Electrophoresis 42, 2060-2069 (2021).
 
 Installation instructions:
+
 Requirements: installed single precision FFTW3 library (www.fftw.org)
 
 To compile the 3D-2PT executables, download the files in this repository and type:
 
 $ make
 
+Test Case:
+
 To get started with 3D-2PT calculations, enter the "test-system" directory
+
 $ cd test-system
+
 The following software is required to run the test simulations:
 - gromacs (www.gromacs.org)
 - VMD (Visual Molecular Dynamics, http://www.ks.uiuc.edu/Research/vmd)
@@ -29,7 +34,7 @@ Enter the corresponding sub-directory:
 
 $ cd NaCl-3.00A
 
-Execute the automated scripts in the sequence described in the provided flowchart (flowchart.pdf).
+Execute the automated scripts (parent directory: ../step-*.sh) in the sequence described in the provided flowchart (flowchart.pdf).
 
 You can repeat steps-2,3,4 an arbitrary number of times to improve statistics:
 - 2 iterations are sufficient as a proof of concept that the software works, but the noise-level will not allow for any meaningful interpretation.
