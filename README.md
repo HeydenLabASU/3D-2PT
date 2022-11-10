@@ -27,8 +27,8 @@ To get started with 3D-2PT calculations, enter the "test-system" directory
 $ cd test-system
 
 The following software is required to run the test simulations:
-- gromacs (www.gromacs.org)
-- VMD (Visual Molecular Dynamics, http://www.ks.uiuc.edu/Research/vmd)
+- GROMACS (version 2018.1 or higher, www.gromacs.org)
+- VMD (version 1.9.3 or higher, Visual Molecular Dynamics, http://www.ks.uiuc.edu/Research/vmd)
 
 The test system consists of a sodium and a chloride ion separated by 3.0A in water.
 Enter the corresponding sub-directory:
