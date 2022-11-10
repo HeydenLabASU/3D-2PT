@@ -13,9 +13,10 @@ Applications include the research presented in the following peer-reviewed resea
 
 **Installation instructions:**
 
-Requirements: installed single precision FFTW3 library (www.fftw.org)
+Requirements: FFTW library (version 3.0 or higher, www.fftw.org) compiled in single precision
 
-To compile the 3D-2PT executables, download the files in this repository and type:
+To compile the 3D-2PT executables, we recommend a UNIX-based OS with installed GNU make. 
+Download this repository, unpack its content into a local directory, enter the directory and type:
 
 $ make
 
