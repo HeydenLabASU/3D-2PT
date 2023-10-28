@@ -41,12 +41,7 @@ fi
 iMax=`expr $i - 1`
 echo "-found ${iMax} snaphots (not counting state_0.gro, which will not be used)"
 
-if [ -z $OMP_NUM_THREADS ]; then
-nThreads=$OMP_NUM_THREADS
-else
-nThreads=4
-fi
-echo "starting ${iMax} NVE simulations with ${nThreads} threads in directories: run-NVE+posres_1-${iMax}"
+echo "starting ${iMax} NVE simulations threads in directories: run-NVE+posres_1-${iMax}"
 echo "(you will want to parallelize this further for real applications)"
 i=1
 while [ $i -le ${iMax} ]
@@ -54,7 +49,7 @@ do
 mkdir run-NVE+posres_${i}
 cd run-NVE+posres_${i}
 cp ../snapshots/state_${i}.gro start.gro
-../../../3D-2PT-files/step-3x_3D-2PT.sh ${nThreads}
+../../../3D-2PT-files/step-3x_3D-2PT.sh
 cd ..
 ((i+= 1))
 done
