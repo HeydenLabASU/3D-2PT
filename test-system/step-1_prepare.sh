@@ -56,7 +56,7 @@ gmx editconf -f complex.pdb -box 3 3 3 -o box.gro >& editconf.out
 echo "solvating system (gmx solvate)"
 gmx solvate -cp box.gro -cs -p complex.top -o solv.gro >& solvate.out
 
-echo "running energy minimizationin directory: em+posres"
+echo "running energy minimization in directory: em+posres"
 mkdir em+posres
 cd em+posres
 gmx grompp -f ../em+posres.mdp -c ../solv.gro -r ../solv.gro -p ../complex.top -o topol.tpr -maxwarn 1 >& grompp.out
