@@ -36,7 +36,6 @@ Enter the corresponding sub-directory:
 $ cd NaCl-3.00A
 
 Execute the automated scripts (parent directory: ../step-*.sh) in the sequence described in the provided flowchart (flowchart.pdf).
-**Note:** step-1_prepare.sh, step-2_sample.sh and step-3_production.sh are performing MD simulations with GROMACS using 4 openMP threads
 
 You can repeat steps-2,3,4 an arbitrary number of times to improve statistics:
 - 2 iterations are sufficient as a proof of concept that the software works, but the noise-level will not allow for any meaningful interpretation.
