@@ -37,6 +37,8 @@ $ cd NaCl-3.00A
 
 Execute the automated scripts (parent directory: ../step-*.sh) in the sequence described in the provided flowchart (flowchart.pdf).
 
+**Note:** Scripts step-1_prepare.sh, step-2_sample.sh and step-3_production.sh (via internal call to script ../3D-2PT-files/step-3x_3D-2PT.sh) will perform MD simulations with GROMACS using 4 openMP threads. The installation of GROMACS must support the command "gmx mdrun" with the flag "-nt 4". Otherwise, modify the "gmx mdrun" commands for your installation.  
+
 You can repeat steps-2,3,4 an arbitrary number of times to improve statistics:
 - 2 iterations are sufficient as a proof of concept that the software works, but the noise-level will not allow for any meaningful interpretation.
 - 40-50 iterations (or modified protocols that provide equivalent statistics) are needed for quantitative results.
