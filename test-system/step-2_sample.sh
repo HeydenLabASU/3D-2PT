@@ -38,7 +38,12 @@ start=run-NPT+posres_${i}/confout.gro
 ((i+= 1))
 done
 
-echo "starting NPT simulation in directory: run-NPT+posres_${i}"
+if [ -z $OMP_NUM_THREADS ]; then
+nThreads=$OMP_NUM_THREADS
+else
+nThreads=4
+fi
+echo "starting NPT simulation with ${nThreads} threads in directory: run-NPT+posres_${i}"
 #We run the simulation with the usual combination of 
 #'grompp' and 'mdrun' steps in a dedicated directory
 #created here.
@@ -46,7 +51,7 @@ mkdir run-NPT+posres_${i}
 cd run-NPT+posres_${i}
 
 gmx grompp -f ../run-NPT+posres.mdp -c ../${start} -p ../complex.top -r ../solv.gro -o topol.tpr -maxwarn 1 >& grompp.out
-gmx mdrun -v -nt 4 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
+gmx mdrun -v -nt ${nThreads} -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 
 #In this post-processing step of the output trajectory, we 
 #extract individual 'snapshots' of the system at regular 
