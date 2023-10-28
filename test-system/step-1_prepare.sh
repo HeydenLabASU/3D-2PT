@@ -63,7 +63,7 @@ gmx grompp -f ../em+posres.mdp -c ../solv.gro -r ../solv.gro -p ../complex.top -
 gmx mdrun -v -nt 1 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 cd ..
 
-nThreads=`echo $OMP_NUM_THREADS`
+nThreads=4
 echo "running NPT equilibration with ${nThreads} threads in directory: equi-NPT+posres"
 mkdir equi-NPT+posres
 cd equi-NPT+posres
