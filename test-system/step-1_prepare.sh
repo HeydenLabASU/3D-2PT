@@ -63,16 +63,11 @@ gmx grompp -f ../em+posres.mdp -c ../solv.gro -r ../solv.gro -p ../complex.top -
 gmx mdrun -v -nt 1 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 cd ..
 
-if [ -z $OMP_NUM_THREADS ]; then
-nThreads=$OMP_NUM_THREADS
-else
-nThreads=4
-fi
-echo "running NPT equilibration with ${nThreads} threads in directory: equi-NPT+posres"
+echo "running NPT equilibration in directory: equi-NPT+posres"
 mkdir equi-NPT+posres
 cd equi-NPT+posres
 gmx grompp -f ../equi-NPT+posres.mdp -c ../em+posres/confout.gro -p ../complex.top -r ../solv.gro -o topol.tpr -maxwarn 1 >& grompp.out
-gmx mdrun -v -nt ${nThreads} -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
+gmx mdrun -v -nt 4 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 cd ..
 
 echo "creating 3D-2PT topology info"
