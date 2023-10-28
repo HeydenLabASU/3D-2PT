@@ -60,7 +60,7 @@ echo "running energy minimization in directory: em+posres"
 mkdir em+posres
 cd em+posres
 gmx grompp -f ../em+posres.mdp -c ../solv.gro -r ../solv.gro -p ../complex.top -o topol.tpr -maxwarn 1 >& grompp.out
-gmx mdrun -v -nt 1 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
+gmx mdrun -v -nt 4 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 cd ..
 
 echo "running NPT equilibration in directory: equi-NPT+posres"
