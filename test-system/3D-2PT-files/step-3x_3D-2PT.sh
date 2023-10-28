@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BIN=<your-3D-2PT-installation-directory>/bin
+nThreads=$1
 
 #first, let's check that all files are in the right place
 files=(
@@ -30,7 +31,7 @@ fi
 done
 
 gmx grompp -f ../../run-NVE+posres.mdp -c start.gro -p ../../complex.top -r ../../solv.gro -o topol.tpr -maxwarn 1 >& grompp.out
-gmx mdrun -v -nt 4 -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
+gmx mdrun -v -nt ${nThreads} -s topol.tpr -o traj.trr -e ener.edr -g md.log -c confout.gro -cpo state.cpt >& mdrun.out
 gmx trjconv -s topol.tpr -f traj.trr -pbc mol -o traj_pbc.trr << STOP >& trjconv.out
 0
 STOP
