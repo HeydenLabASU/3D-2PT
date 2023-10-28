@@ -27,8 +27,8 @@ To get started with 3D-2PT calculations, enter the "test-system" directory
 $ cd test-system
 
 The following software is required to run the test simulations:
-- GROMACS (version 2018.1 or higher, www.gromacs.org)
-- VMD (version 1.9.3 or higher, Visual Molecular Dynamics, http://www.ks.uiuc.edu/Research/vmd)
+- GROMACS (version 2022.5 or higher, www.gromacs.org) (expected terminal command "gmx")
+- VMD (version 1.9.3 or higher, Visual Molecular Dynamics, http://www.ks.uiuc.edu/Research/vmd) (expected terminal command "vmd")
 
 The test system consists of a sodium and a chloride ion separated by 3.0A in water.
 Enter the corresponding sub-directory:
@@ -36,6 +36,7 @@ Enter the corresponding sub-directory:
 $ cd NaCl-3.00A
 
 Execute the automated scripts (parent directory: ../step-*.sh) in the sequence described in the provided flowchart (flowchart.pdf).
+**Note:** step-1_prepare.sh, step-2_sample.sh and step-3_production.sh are performing MD simulations with GROMACS using 4 openMP threads
 
 You can repeat steps-2,3,4 an arbitrary number of times to improve statistics:
 - 2 iterations are sufficient as a proof of concept that the software works, but the noise-level will not allow for any meaningful interpretation.
