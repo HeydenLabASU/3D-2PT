@@ -10,7 +10,7 @@ nstvout                 = 10000     ; save velocities every 10 ps
 nstenergy               = 10000     ; save energies every 10 ps
 nstlog                  = 10000     ; update log file every 10 ps
 ; Center of mass (COM) motion
-nstcomm                 = 10        ; remove COM motion every 10 steps
+nstcomm                 = 100       ; remove COM motion every 10 steps
 comm-mode               = Linear    ; remove only COM translation (liquids in PBC) 
 ; Bond parameters
 continuation            = yes       ; first dynamics run
@@ -20,7 +20,7 @@ lincs_iter              = 1         ; accuracy of LINCS
 lincs_order             = 4         ; also related to accuracy
 ; Nonbonded settings
 cutoff-scheme           = Verlet    ; Buffered neighbor searching
-ns_type                 = grid      ; search neighboring grid cells
+;ns_type                 = grid      ; search neighboring grid cells
 nstlist                 = 10        ; 10 fs, largely irrelevant with Verlet
 rcoulomb                = 1.0       ; short-range electrostatic cutoff (in nm)
 rvdw                    = 1.0       ; short-range van der Waals cutoff (in nm)

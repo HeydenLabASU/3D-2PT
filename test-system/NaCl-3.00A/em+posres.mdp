@@ -15,7 +15,7 @@ emtol               =  1000
 emstep              =  0.01
 
 nstcomm             =  1
-ns_type             =  grid
+;ns_type             =  grid
 
 coulombtype         =  PME
 rvdw                =  0.9
