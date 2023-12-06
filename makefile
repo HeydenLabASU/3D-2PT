@@ -96,37 +96,37 @@ process-cube: src/post-process/process-cube.c
 
 #dependencies
 lib/fatal.o: src/core/fatal.c
-	gcc -c src/core/fatal.c -o lib/fatal.o
+	${COMP} -c src/core/fatal.c -o lib/fatal.o
 
 lib/geo.o: src/core/geo.c
-	gcc -c src/core/geo.c -o lib/geo.o
+	${COMP} -c src/core/geo.c -o lib/geo.o
 
 lib/GMXtrrio.o: src/core/GMXtrrio.c
-	gcc -c src/core/GMXtrrio.c -o lib/GMXtrrio.o
+	${COMP} -c src/core/GMXtrrio.c -o lib/GMXtrrio.o
 
 lib/io.o: src/core/io.c
-	gcc -c src/core/io.c -o lib/io.o
+	${COMP} -c src/core/io.c -o lib/io.o
 
 lib/alloc.o: src/core/alloc.c
-	gcc -c src/core/alloc.c -o lib/alloc.o
+	${COMP} -c src/core/alloc.c -o lib/alloc.o
 
 lib/top.o: src/core/top.c
-	gcc -c src/core/top.c -o lib/top.o
+	${COMP} -c src/core/top.c -o lib/top.o
 
 lib/select.o: src/core/select.c
-	gcc -c src/core/select.c -o lib/select.o
+	${COMP} -c src/core/select.c -o lib/select.o
 
 lib/grps.o: src/core/grps.c
-	gcc -c src/core/grps.c -o lib/grps.o
+	${COMP} -c src/core/grps.c -o lib/grps.o
 
 lib/job.o: src/core/job.c
-	gcc -c src/core/job.c -o lib/job.o
+	${COMP} -c src/core/job.c -o lib/job.o
 
 lib/align.o: src/core/align.c
-	gcc -c src/core/align.c -o lib/align.o
+	${COMP} -c src/core/align.c -o lib/align.o
 
 lib/qsort.o: src/core/qsort.c
-	gcc -c src/core/qsort.c -o lib/qsort.o
+	${COMP} -c src/core/qsort.c -o lib/qsort.o
 
 lib/mol.o: src/core/mol.c
-	gcc -c src/core/mol.c -o lib/mol.o
+	${COMP} -c src/core/mol.c -o lib/mol.o
